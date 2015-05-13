@@ -38,6 +38,15 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOZ-NO-ePN">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="stop-iphone">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Y0u-k0-dpG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -45,29 +54,37 @@
                             <constraint firstItem="3BE-Bm-Qw6" firstAttribute="centerX" secondItem="byI-ls-eOf" secondAttribute="centerX" constant="0.5" id="3NB-l6-PcY"/>
                             <constraint firstAttribute="centerY" secondItem="byI-ls-eOf" secondAttribute="centerY" constant="0.5" id="Tut-Kq-fw0"/>
                             <constraint firstItem="3BE-Bm-Qw6" firstAttribute="top" secondItem="byI-ls-eOf" secondAttribute="bottom" constant="33" id="bW6-uD-SGE"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="cOZ-NO-ePN" secondAttribute="bottom" constant="20" id="fPl-7z-7dG"/>
+                            <constraint firstItem="cOZ-NO-ePN" firstAttribute="centerX" secondItem="byI-ls-eOf" secondAttribute="centerX" id="jRy-CH-SuF"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="byI-ls-eOf"/>
                                 <exclude reference="3BE-Bm-Qw6"/>
+                                <exclude reference="cOZ-NO-ePN"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="2oy-Wz-LFS"/>
                                 <exclude reference="Tut-Kq-fw0"/>
                                 <exclude reference="3NB-l6-PcY"/>
                                 <exclude reference="bW6-uD-SGE"/>
+                                <exclude reference="jRy-CH-SuF"/>
+                                <exclude reference="fPl-7z-7dG"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="byI-ls-eOf"/>
                                 <include reference="3BE-Bm-Qw6"/>
+                                <include reference="cOZ-NO-ePN"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="2oy-Wz-LFS"/>
                                 <include reference="Tut-Kq-fw0"/>
                                 <include reference="3NB-l6-PcY"/>
                                 <include reference="bW6-uD-SGE"/>
+                                <include reference="jRy-CH-SuF"/>
+                                <include reference="fPl-7z-7dG"/>
                             </mask>
                         </variation>
                     </view>
@@ -82,5 +99,6 @@
     </scenes>
     <resources>
         <image name="microphone-iphone" width="100" height="100"/>
+        <image name="stop-iphone" width="50" height="50"/>
     </resources>
 </document>
