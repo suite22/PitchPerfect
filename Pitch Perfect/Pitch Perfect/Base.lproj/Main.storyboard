@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Record-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
@@ -49,7 +49,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="byI-ls-eOf" secondAttribute="centerX" id="2oy-Wz-LFS"/>
                             <constraint firstItem="3BE-Bm-Qw6" firstAttribute="centerX" secondItem="byI-ls-eOf" secondAttribute="centerX" constant="0.5" id="3NB-l6-PcY"/>
@@ -89,7 +89,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="KQx-As-KrQ"/>
+                    <navigationItem key="navigationItem" title="Record" id="KQx-As-KrQ"/>
                     <connections>
                         <outlet property="recordButton" destination="byI-ls-eOf" id="JwO-kO-n4b"/>
                         <outlet property="recordLabel" destination="3BE-Bm-Qw6" id="WJn-Fi-3Dp"/>
