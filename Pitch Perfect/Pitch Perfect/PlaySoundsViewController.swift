@@ -7,12 +7,27 @@
 //
 
 import UIKit
+import AVFoundation
 
 class PlaySoundsViewController: UIViewController {
 
+    var slowPlayback = AVAudioPlayer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        func setupAudioPlayerWithFile(file:NSString, type:NSString) -> AVAudioPlayer {
+            var path = NSBundle.mainBundle().pathForResource(file as String, ofType: type as String)
+            var url = NSURL.fileURLWithPath(path!)
+            
+            var error: NSError?
+            
+            var audioPlayer: AVAudioPlayer?
+            audioPlayer = AVAudioPlayer(contentsOfURL: url, error: &error)
+            
+            return audioPlayer!
+        }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
