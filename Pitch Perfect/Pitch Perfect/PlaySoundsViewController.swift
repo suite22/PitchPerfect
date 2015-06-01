@@ -13,20 +13,24 @@ class PlaySoundsViewController: UIViewController {
 
     var slowPlayback = AVAudioPlayer()
     
+    func setupAudioPlayerWithFile(file:NSString, type:NSString) -> AVAudioPlayer {
+        var path = NSBundle.mainBundle().pathForResource(file as String, ofType: type as String)
+        println(file)
+        println(type)
+        var url = NSURL.fileURLWithPath(path!)
+        
+        var error: NSError?
+        
+        var audioPlayer: AVAudioPlayer?
+        audioPlayer = AVAudioPlayer(contentsOfURL: url, error: &error)
+        
+        return audioPlayer!
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        func setupAudioPlayerWithFile(file:NSString, type:NSString) -> AVAudioPlayer {
-            var path = NSBundle.mainBundle().pathForResource(file as String, ofType: type as String)
-            var url = NSURL.fileURLWithPath(path!)
-            
-            var error: NSError?
-            
-            var audioPlayer: AVAudioPlayer?
-            audioPlayer = AVAudioPlayer(contentsOfURL: url, error: &error)
-            
-            return audioPlayer!
-        }
+        
+        slowPlayback = self.setupAudioPlayerWithFile("movie_quote", type: "mp3")
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -42,6 +46,8 @@ class PlaySoundsViewController: UIViewController {
     
     @IBAction func playSlow(sender: AnyObject) {
         println("yo")
+        
+        slowPlayback.play()
     }
     
 
