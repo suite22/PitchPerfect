@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RecordSoundViewController.swift
 //  Pitch Perfect
 //
 //  Created by Ben Goertz on 5/12/15.
@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import AVFoundation
 
-class ViewController: UIViewController {
+class RecordSoundViewController: UIViewController {
 
     @IBOutlet weak var recordLabel: UILabel!
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
+    
+    var audioRecorder:AVAudioRecorder!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +31,10 @@ class ViewController: UIViewController {
         stopButton.hidden = true
     }
 
+    // MARK: IBActions
+    
     @IBAction func recordAudio(sender: UIButton) {
-        //println("Yo!")
-        // TODO: Record audio.
+        
         
         recordButton.enabled = false
         
