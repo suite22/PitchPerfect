@@ -40,13 +40,21 @@ class PlaySoundsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: IBActions
+    
     @IBAction func playSlow(sender: AnyObject) {
-        println("yo")
+        println("Slow it down there!")
         audioPlayer.stop()
         audioPlayer.rate = 0.5
         audioPlayer.play()
     }
     
+    @IBAction func playFast(sender: AnyObject) {
+        println("Let's play fast!")
+        audioPlayer.stop()
+        audioPlayer.rate = 1.5
+        audioPlayer.play()
+    }
 
     /*
     // MARK: - Navigation
