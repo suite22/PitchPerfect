@@ -131,9 +131,20 @@
                                     <action selector="playFast:" destination="XzX-2c-Kzk" eventType="touchUpInside" id="5Xe-vk-eqv"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5BT-jh-FG1">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="stop-iphone">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopSound:" destination="XzX-2c-Kzk" eventType="touchUpInside" id="Gyw-YV-Lh0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="5BT-jh-FG1" secondAttribute="centerX" id="2Y8-hS-3RW"/>
+                            <constraint firstItem="CjY-pE-xX8" firstAttribute="top" secondItem="5BT-jh-FG1" secondAttribute="bottom" constant="20" id="6Rp-iJ-MuT"/>
                             <constraint firstItem="zrO-TF-MVY" firstAttribute="leading" secondItem="Z0V-vo-bZl" secondAttribute="leading" constant="43" id="6Th-ru-nLw">
                                 <variation key="widthClass=compact" constant="20"/>
                             </constraint>
@@ -147,24 +158,30 @@
                             <mask key="subviews">
                                 <exclude reference="zrO-TF-MVY"/>
                                 <exclude reference="dU6-x2-WKc"/>
+                                <exclude reference="5BT-jh-FG1"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="6Th-ru-nLw"/>
                                 <exclude reference="BV9-Ci-XGQ"/>
                                 <exclude reference="NzT-5E-9dr"/>
                                 <exclude reference="l6M-bT-lJ4"/>
+                                <exclude reference="2Y8-hS-3RW"/>
+                                <exclude reference="6Rp-iJ-MuT"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="zrO-TF-MVY"/>
                                 <include reference="dU6-x2-WKc"/>
+                                <include reference="5BT-jh-FG1"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="6Th-ru-nLw"/>
                                 <include reference="BV9-Ci-XGQ"/>
                                 <include reference="NzT-5E-9dr"/>
                                 <include reference="l6M-bT-lJ4"/>
+                                <include reference="2Y8-hS-3RW"/>
+                                <include reference="6Rp-iJ-MuT"/>
                             </mask>
                         </variation>
                     </view>
