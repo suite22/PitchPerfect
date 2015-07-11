@@ -63,6 +63,11 @@ class PlaySoundsViewController: UIViewController {
         playAudioWithVariablePitch(1000)
     }
     
+    @IBAction func playAsVader(sender: AnyObject) {
+        println("I want to sound like your father")
+        playAudioWithVariablePitch(-800)
+    }
+    
     @IBAction func stopSound(sender: AnyObject) {
         println("Stop playback please.")
         audioPlayer.stop()
