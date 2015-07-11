@@ -12,21 +12,13 @@ import AVFoundation
 class PlaySoundsViewController: UIViewController {
 
     var audioPlayer: AVAudioPlayer!
+    var receivedAudio: RecordedAudio!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if var path = NSBundle.mainBundle().pathForResource("movie_quote", ofType: "mp3") {
-            var url = NSURL.fileURLWithPath(path)
-            
-            var error: NSError?
-
-            audioPlayer = AVAudioPlayer(contentsOfURL: url, error: nil)
-            audioPlayer.enableRate = true
-            
-        } else {
-            println("I think the file path was wrong.")
-        }
+        audioPlayer = AVAudioPlayer(contentsOfURL: receivedAudio.filePathUrl, error: nil)
+        audioPlayer.enableRate = true
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

@@ -16,6 +16,7 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var recordButton: UIButton!
     
     var audioRecorder:AVAudioRecorder!
+    var recordedAudio:RecordedAudio!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +56,24 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
         // Show label when recording.
         stopButton.hidden = false
         recordLabel.hidden = false
+    }
+    
+    func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
+        if (flag) {
+            recordedAudio = RecordedAudio()
+            recordedAudio.filePathUrl = recorder.url
+            recordedAudio.title = recorder.url.lastPathComponent
+            
+            self.performSegueWithIdentifier("stopRecording", sender: recordedAudio)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "stopRecording") {
+            let playSoundsVC:PlaySoundsViewController = segue.destinationViewController as! PlaySoundsViewController
+            let data = sender as! RecordedAudio
+            playSoundsVC.receivedAudio = data
+        }
     }
     
     @IBAction func stopAudio(sender: UIButton) {
