@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JZ5-vD-wQu">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -46,7 +47,6 @@
                                 </state>
                                 <connections>
                                     <action selector="stopAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Y0u-k0-dpG"/>
-                                    <segue destination="XzX-2c-Kzk" kind="show" id="ChH-Dx-bAq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -95,6 +95,7 @@
                         <outlet property="recordButton" destination="byI-ls-eOf" id="JwO-kO-n4b"/>
                         <outlet property="recordLabel" destination="3BE-Bm-Qw6" id="WJn-Fi-3Dp"/>
                         <outlet property="stopButton" destination="cOZ-NO-ePN" id="zfB-fC-e8g"/>
+                        <segue destination="XzX-2c-Kzk" kind="show" identifier="stopRecording" id="z0Q-U7-gG4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -161,12 +162,12 @@
                                 <exclude reference="5BT-jh-FG1"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="6Th-ru-nLw"/>
-                                <exclude reference="BV9-Ci-XGQ"/>
+                                <exclude reference="6Rp-iJ-MuT"/>
+                                <exclude reference="2Y8-hS-3RW"/>
                                 <exclude reference="NzT-5E-9dr"/>
                                 <exclude reference="l6M-bT-lJ4"/>
-                                <exclude reference="2Y8-hS-3RW"/>
-                                <exclude reference="6Rp-iJ-MuT"/>
+                                <exclude reference="6Th-ru-nLw"/>
+                                <exclude reference="BV9-Ci-XGQ"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -176,12 +177,12 @@
                                 <include reference="5BT-jh-FG1"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="6Th-ru-nLw"/>
-                                <include reference="BV9-Ci-XGQ"/>
+                                <include reference="6Rp-iJ-MuT"/>
+                                <include reference="2Y8-hS-3RW"/>
                                 <include reference="NzT-5E-9dr"/>
                                 <include reference="l6M-bT-lJ4"/>
-                                <include reference="2Y8-hS-3RW"/>
-                                <include reference="6Rp-iJ-MuT"/>
+                                <include reference="6Th-ru-nLw"/>
+                                <include reference="BV9-Ci-XGQ"/>
                             </mask>
                         </variation>
                     </view>
