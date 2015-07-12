@@ -20,7 +20,6 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,6 +28,9 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
    override func viewWillAppear(animated: Bool) {
+        recordLabel.text = "Tap to Record"
+        recordLabel.hidden = false
+    
         stopButton.hidden = true
     }
 
@@ -55,6 +57,7 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
         
         // Show label when recording.
         stopButton.hidden = false
+        recordLabel.text = "Recording"
         recordLabel.hidden = false
     }
     
