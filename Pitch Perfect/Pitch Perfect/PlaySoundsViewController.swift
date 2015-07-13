@@ -20,11 +20,19 @@ class PlaySoundsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        audioPlayer = AVAudioPlayer(contentsOfURL: receivedAudio.filePathUrl, error: nil)
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOfURL: receivedAudio.filePathUrl)
+        } catch _ {
+            audioPlayer = nil
+        }
         audioPlayer.enableRate = true
         
         audioEngine = AVAudioEngine()
-        audioFile = AVAudioFile(forReading: receivedAudio.filePathUrl, error: nil)
+        do {
+            audioFile = try AVAudioFile(forReading: receivedAudio.filePathUrl)
+        } catch _ {
+            audioFile = nil
+        }
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -41,29 +49,29 @@ class PlaySoundsViewController: UIViewController {
     // MARK: IBActions
     
     @IBAction func playSlow(sender: AnyObject) {
-        println("Slow it down there!")
+        print("Slow it down there!")
         setPlaybackSpeed(0.5)
         audioPlayer.play()
     }
     
     @IBAction func playFast(sender: AnyObject) {
-        println("Let's play fast!")
+        print("Let's play fast!")
         setPlaybackSpeed(1.5)
         audioPlayer.play()
     }
     
     @IBAction func playAsChipmunk(sender: AnyObject) {
-        println("I'm a chipmunk!")
+        print("I'm a chipmunk!")
         playAudioWithVariablePitch(1000)
     }
     
     @IBAction func playAsVader(sender: AnyObject) {
-        println("I want to sound like your father")
+        print("I want to sound like your father")
         playAudioWithVariablePitch(-800)
     }
     
     @IBAction func stopSound(sender: AnyObject) {
-        println("Stop playback please.")
+        print("Stop playback please.")
         audioPlayer.stop()
     }
     
@@ -92,7 +100,10 @@ class PlaySoundsViewController: UIViewController {
         audioEngine.connect(changePitchEffect, to: audioEngine.outputNode, format: nil)
         
         audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
-        audioEngine.startAndReturnError(nil)
+        do {
+            try audioEngine.startAndReturnError()
+        } catch _ {
+        }
         
         audioPlayerNode.play()
     }
