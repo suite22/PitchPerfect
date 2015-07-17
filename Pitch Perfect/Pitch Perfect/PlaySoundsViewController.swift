@@ -25,17 +25,11 @@ class PlaySoundsViewController: UIViewController {
         
         audioEngine = AVAudioEngine()
         audioFile = AVAudioFile(forReading: receivedAudio.filePathUrl, error: nil)
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
     }
     
     // MARK: IBActions
@@ -43,13 +37,11 @@ class PlaySoundsViewController: UIViewController {
     @IBAction func playSlow(sender: AnyObject) {
         println("Slow it down there!")
         setPlaybackSpeed(0.5)
-        audioPlayer.play()
     }
     
     @IBAction func playFast(sender: AnyObject) {
         println("Let's play fast!")
         setPlaybackSpeed(1.5)
-        audioPlayer.play()
     }
     
     @IBAction func playAsChipmunk(sender: AnyObject) {
@@ -67,19 +59,23 @@ class PlaySoundsViewController: UIViewController {
         audioPlayer.stop()
     }
     
-    func setPlaybackSpeed(rate: Float) {
+    func stopPlayback() {
         audioPlayer.stop()
         audioEngine.stop()
         audioEngine.reset()
+    }
+    
+    func setPlaybackSpeed(rate: Float) {
+        stopPlayback()
         
         audioPlayer.rate = rate
         audioPlayer.currentTime = 0.0
+        
+        audioPlayer.play()
     }
     
     func playAudioWithVariablePitch(pitch: Float) {
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
+        stopPlayback()
         
         var audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
@@ -96,16 +92,4 @@ class PlaySoundsViewController: UIViewController {
         
         audioPlayerNode.play()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
