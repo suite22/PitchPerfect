@@ -35,7 +35,6 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
     }
 
     // MARK: IBActions
-    
     @IBAction func recordAudio(sender: UIButton) {
         let directoryPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
 
@@ -61,6 +60,18 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
         recordLabel.hidden = false
     }
     
+    @IBAction func stopAudio(sender: UIButton) {
+        audioRecorder.stop()
+        var audioSession = AVAudioSession.sharedInstance()
+        audioSession.setActive(false, error: nil)
+        
+        recordButton.enabled = true
+        
+        // Hide recording label
+        recordLabel.hidden = true
+    }
+    
+    /// MARK: Audio Recorder Delegate
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
         if (flag) {
             recordedAudio = RecordedAudio(filePathUrl: recorder.url, title: recorder.url.lastPathComponent!)
@@ -75,17 +86,6 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
             let data = sender as! RecordedAudio
             playSoundsVC.receivedAudio = data
         }
-    }
-    
-    @IBAction func stopAudio(sender: UIButton) {
-        audioRecorder.stop()
-        var audioSession = AVAudioSession.sharedInstance()
-        audioSession.setActive(false, error: nil)
-        
-        recordButton.enabled = true
-        
-        // Hide recording label
-        recordLabel.hidden = true
     }
 }
 
