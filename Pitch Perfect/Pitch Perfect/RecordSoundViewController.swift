@@ -42,16 +42,17 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
         let recordingName = "audioRecording.wav"
         let pathArray = [directoryPath, recordingName]
         let filePath = NSURL.fileURLWithPathComponents(pathArray)
+		let recorderSettings: [String: AnyObject] = [:] // Probably need to pass in actual constants, but this currently works.
         print(filePath)
         
-        var session = AVAudioSession.sharedInstance()
+        let session = AVAudioSession.sharedInstance()
         do {
             try session.setCategory(AVAudioSessionCategoryPlayAndRecord)
         } catch _ {
         }
         
         do {
-            audioRecorder = try AVAudioRecorder(URL: filePath, settings: nil)
+			audioRecorder = try AVAudioRecorder(URL: filePath!, settings: recorderSettings)
         } catch _ {
             audioRecorder = nil
         }
