@@ -43,7 +43,7 @@ class PlaySoundsViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
     }
     
     // MARK: IBActions
@@ -51,13 +51,11 @@ class PlaySoundsViewController: UIViewController {
     @IBAction func playSlow(sender: AnyObject) {
         print("Slow it down there!")
         setPlaybackSpeed(0.5)
-        audioPlayer.play()
     }
     
     @IBAction func playFast(sender: AnyObject) {
         print("Let's play fast!")
         setPlaybackSpeed(1.5)
-        audioPlayer.play()
     }
     
     @IBAction func playAsChipmunk(sender: AnyObject) {
@@ -72,22 +70,26 @@ class PlaySoundsViewController: UIViewController {
     
     @IBAction func stopSound(sender: AnyObject) {
         print("Stop playback please.")
+        stopPlayback()
+    }
+    
+    func stopPlayback() {
         audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
     }
     
     func setPlaybackSpeed(rate: Float) {
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
+        stopPlayback()
         
         audioPlayer.rate = rate
         audioPlayer.currentTime = 0.0
+        
+        audioPlayer.play()
     }
     
     func playAudioWithVariablePitch(pitch: Float) {
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
+        stopPlayback()
         
         let audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
@@ -108,16 +110,4 @@ class PlaySoundsViewController: UIViewController {
         
         audioPlayerNode.play()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

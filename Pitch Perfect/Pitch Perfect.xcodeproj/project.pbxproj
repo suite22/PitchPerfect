@@ -84,10 +84,10 @@
 			isa = PBXGroup;
 			children = (
 				9B1F7B7B1B02C489009F5F9E /* AppDelegate.swift */,
-				9B1F7B7D1B02C489009F5F9E /* RecordSoundViewController.swift */,
-				9B1F7B7F1B02C489009F5F9E /* Main.storyboard */,
 				9B5A81811B50C0B4009B293D /* RecordedAudio.swift */,
+				9B1F7B7D1B02C489009F5F9E /* RecordSoundViewController.swift */,
 				9B6D18121B1CA43A004DAD57 /* PlaySoundsViewController.swift */,
+				9B1F7B7F1B02C489009F5F9E /* Main.storyboard */,
 				9B1F7B821B02C489009F5F9E /* Images.xcassets */,
 				9B1F7B841B02C489009F5F9E /* LaunchScreen.xib */,
 				9B1F7B791B02C489009F5F9E /* Supporting Files */,
