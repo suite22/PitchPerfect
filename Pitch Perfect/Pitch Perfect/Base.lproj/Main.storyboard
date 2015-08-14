@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JZ5-vD-wQu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8164.2" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JZ5-vD-wQu">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Record-->
@@ -175,7 +177,9 @@
                             <constraint firstItem="dU6-x2-WKc" firstAttribute="centerX" secondItem="kqg-Wv-vqA" secondAttribute="centerX" constant="-54.5" id="JHQ-tS-ZC4">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
+                            <constraint firstItem="dU6-x2-WKc" firstAttribute="centerX" secondItem="Z0V-vo-bZl" secondAttribute="trailing" multiplier="5:7" id="Nh3-W8-FeC"/>
                             <constraint firstItem="dU6-x2-WKc" firstAttribute="top" secondItem="0DF-dr-ZRX" secondAttribute="bottom" constant="20" id="NzT-5E-9dr"/>
+                            <constraint firstItem="zrO-TF-MVY" firstAttribute="centerX" secondItem="Z0V-vo-bZl" secondAttribute="trailing" multiplier="2:7" id="kuX-FC-Yui"/>
                             <constraint firstItem="dU6-x2-WKc" firstAttribute="trailing" secondItem="Z0V-vo-bZl" secondAttribute="trailing" constant="-20" id="l6M-bT-lJ4"/>
                             <constraint firstItem="h5K-py-b3n" firstAttribute="centerY" secondItem="kqg-Wv-vqA" secondAttribute="centerY" constant="-35" id="xPT-aS-eVl">
                                 <variation key="widthClass=compact" constant="0.0"/>
@@ -190,16 +194,18 @@
                                 <exclude reference="kqg-Wv-vqA"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="6Rp-iJ-MuT"/>
-                                <exclude reference="2Y8-hS-3RW"/>
-                                <exclude reference="JHQ-tS-ZC4"/>
-                                <exclude reference="NzT-5E-9dr"/>
-                                <exclude reference="l6M-bT-lJ4"/>
+                                <exclude reference="6Th-ru-nLw"/>
+                                <exclude reference="BV9-Ci-XGQ"/>
+                                <exclude reference="kuX-FC-Yui"/>
                                 <exclude reference="2gu-m5-Il9"/>
                                 <exclude reference="G3u-IL-1rq"/>
                                 <exclude reference="xPT-aS-eVl"/>
-                                <exclude reference="6Th-ru-nLw"/>
-                                <exclude reference="BV9-Ci-XGQ"/>
+                                <exclude reference="JHQ-tS-ZC4"/>
+                                <exclude reference="Nh3-W8-FeC"/>
+                                <exclude reference="NzT-5E-9dr"/>
+                                <exclude reference="l6M-bT-lJ4"/>
+                                <exclude reference="2Y8-hS-3RW"/>
+                                <exclude reference="6Rp-iJ-MuT"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -211,16 +217,18 @@
                                 <include reference="kqg-Wv-vqA"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="6Rp-iJ-MuT"/>
-                                <include reference="2Y8-hS-3RW"/>
-                                <include reference="JHQ-tS-ZC4"/>
-                                <include reference="NzT-5E-9dr"/>
-                                <include reference="l6M-bT-lJ4"/>
+                                <exclude reference="6Th-ru-nLw"/>
+                                <include reference="BV9-Ci-XGQ"/>
+                                <include reference="kuX-FC-Yui"/>
                                 <include reference="2gu-m5-Il9"/>
                                 <include reference="G3u-IL-1rq"/>
                                 <include reference="xPT-aS-eVl"/>
-                                <include reference="6Th-ru-nLw"/>
-                                <include reference="BV9-Ci-XGQ"/>
+                                <include reference="JHQ-tS-ZC4"/>
+                                <include reference="Nh3-W8-FeC"/>
+                                <include reference="NzT-5E-9dr"/>
+                                <exclude reference="l6M-bT-lJ4"/>
+                                <include reference="2Y8-hS-3RW"/>
+                                <include reference="6Rp-iJ-MuT"/>
                             </mask>
                         </variation>
                     </view>
