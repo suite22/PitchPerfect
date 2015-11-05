@@ -37,7 +37,7 @@ class Pitch_PerfectTests: XCTestCase {
     }
 
 	func testRecordVC(){
-		//XCTAssertEqual(recordVC.stopButton.hidden, true, "The stop recording button should be hidden")
+		XCTAssertEqual(recordVC.stopButton.hidden, true, "The stop recording button should be hidden")
 		XCTAssertEqual(recordVC.recordLabel.hidden, true, "The recording label should be hidden")
 		XCTAssertEqual(recordVC.recordButton.enabled, true, "The recording button should be enabled")
 		
