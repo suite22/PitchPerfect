@@ -5,9 +5,9 @@ env:
   - LC_CTYPE=en_US.UTF-8
   - LANG=en_US.UTF-8
   matrix:
-    - DESTINATION="OS=8.3,name=iPhone 5S" SCHEME="Stormy" SDK=iphonesimulator9.0 BUILD_EXAMPLE="YES" POD_LINT="NO"
-    - DESTINATION="OS=8.4,name=iPhone 6" SCHEME="Stormy" SDK=iphonesimulator9.0 BUILD_EXAMPLE="YES" POD_LINT="NO"
-    - DESTINATION="OS=9.0,name=iPhone 6 Plus" SCHEME="Stormy" SDK=iphonesimulator9.0 BUILD_EXAMPLE="YES" POD_LINT="NO"
+    - DESTINATION="OS=8.3,name=iPhone 5S" SCHEME="PitchPerfect" SDK=iphonesimulator9.0 BUILD_EXAMPLE="YES" POD_LINT="NO"
+    - DESTINATION="OS=8.4,name=iPhone 6" SCHEME="PitchPerfect" SDK=iphonesimulator9.0 BUILD_EXAMPLE="YES" POD_LINT="NO"
+    - DESTINATION="OS=9.0,name=iPhone 6 Plus" SCHEME="PitchPerfect" SDK=iphonesimulator9.0 BUILD_EXAMPLE="YES" POD_LINT="NO"
 before_install:
     
 script:
